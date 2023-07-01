@@ -6,10 +6,13 @@ local_settings.py
 db.sqlite3
 media
 
-.env
+.env*
+!.env.example
 .venv
 env/
 venv/
 ENV/
 env.bak/
 venv.bak/
+
+.vscode/
