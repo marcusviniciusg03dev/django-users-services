@@ -11,15 +11,28 @@ def register(request: HttpRequest):
         password = request.POST.get('password')
 
         if username == None or email == None or password == None:
-            return HttpResponse('Some data is missing.')
+            return render(
+                request,
+                'register.html',
+                {
+                    'error_message': 'Some data is missing.'
+                })
         
         if len(username) == 0 or len(email) == 0 or len(password) == 0:
-            return HttpResponse('No fields can be empty.')
+            return render(
+                request,
+                'register.html', {
+                    'error_message': 'No fields can be empty.'
+                })
 
         finded_user = User.objects.filter(username=username).first()
 
         if finded_user != None:
-            return HttpResponse('Check your credentials.')
+            return render(
+                request,
+                'register.html', {
+                    'error_message': 'Check your credentials.' 
+                })
         
         user = User.objects.create_user(username=username, email=email, password=password)
         user.save()

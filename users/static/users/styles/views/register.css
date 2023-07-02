@@ -35,3 +35,7 @@ input[type="submit"] {
     color: #F2F2F2;
     border: 0;
 }
+
+#error-message {
+    color: #ff2487;
+}

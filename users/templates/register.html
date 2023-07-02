@@ -46,6 +46,9 @@
                     required
                 />
             </div>
+            {% if error_message %}
+                <span id="error-message">{{ error_message }}</span>
+            {% endif %}
             <input
                 type="submit"
                 value="REGISTER"
