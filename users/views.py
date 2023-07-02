@@ -1,6 +1,30 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpRequest
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
+
+def signin(request: HttpRequest):
+    if request.method == 'GET':
+        return render(request, 'login.html')
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return HttpResponse('Successfully authenticated.')
+        else:
+            return render(
+                request,
+                'login.html',
+                {
+                    'error_message': 'Check your credentials.'
+                }
+            )
+    else:
+        return HttpResponse('Resource not found.')
 
 def register(request: HttpRequest):
     if request.method == 'GET':

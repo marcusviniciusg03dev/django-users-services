@@ -1,0 +1,41 @@
+#login-form {
+    max-width: 30rem;
+    width: 90%;
+    border-radius: 8px;
+    display: grid;
+    gap: 1rem;
+    padding: 32px;
+    background-color: white;
+    box-shadow: 1px 2px 10px #00000010;
+    margin: auto;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    padding: 16px;
+    border-radius: 4px;
+}
+
+.field input:not([type="submit"]) {
+    border: 2px solid;
+    background-color: #f4f4f4;
+}
+
+input[type="submit"] {
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#submit-login-form {
+    background-color: #0092c3;
+    color: #F2F2F2;
+    border: 0;
+}
+
+#error-message {
+    color: #ff2487;
+}
