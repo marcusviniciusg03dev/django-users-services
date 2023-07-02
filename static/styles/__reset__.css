@@ -21,3 +21,7 @@ body {
     background-color: #e5e5e5;
     display: grid;
 }
+
+a {
+    color: #0092c3;
+}
