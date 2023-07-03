@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpRequest
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
@@ -14,7 +14,7 @@ def signin(request: HttpRequest):
 
         if user is not None:
             login(request, user)
-            return HttpResponse('Successfully authenticated.')
+            return redirect('/app')
         else:
             return render(
                 request,
