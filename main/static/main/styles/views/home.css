@@ -1,0 +1,37 @@
+#welcome-container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    gap: 100px;
+}
+
+#welcome-container span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+#welcome-container span a {
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+    display: grid;
+}
+
+#go-login-button {
+    background-color: #0092c3;
+    color: #F2F2F2;
+    border: 0;
+    text-decoration: none;
+    padding: 16px;
+    border-radius: 5px;
+}
+
+#go-register-button {
+    color: #0092c3;
+    border: 2px solid;
+    text-decoration: none;
+    padding: 16px;
+    border-radius: 5px;
+}
