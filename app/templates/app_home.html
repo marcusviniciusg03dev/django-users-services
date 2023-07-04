@@ -1,19 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
 
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'styles/__reset__.css' %}" />
-    <link rel="stylesheet" href="{% static 'app/styles/views/app_home.css' %}" />
-</head>
-<body>
-    <main id="page">
-        <div id="main-container">
-            <p>You're logged in!</p> 
-        </div>
-    </main>
-</body>
-</html>
+{% block header %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'app/styles/views/app_home.css' %}" />
+{% endblock %}
+
+{% block content %}
+<main id="page">
+    <div id="main-container">
+        <p>You're logged in!</p>
+    </div>
+</main>
+{% endblock %}
